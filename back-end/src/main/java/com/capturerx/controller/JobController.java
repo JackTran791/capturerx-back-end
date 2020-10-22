@@ -17,13 +17,6 @@ public class JobController {
     private final JobService jobService;
     private final KafkaProducer kafkaProducer;
 
-//    @PostMapping("/add")
-////    public long saveRequest(@RequestParam("desc") String desc) {
-////        long jobId = jobService.saveRequest(desc);
-////        kafkaProducer.send(jobId);
-////        return jobId;
-////    }
-
     @PostMapping("/add")
     public long saveRequest(@RequestBody Job job) {
         long jobId = jobService.saveRequest(job.getDescription());
